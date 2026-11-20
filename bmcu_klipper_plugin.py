@@ -8,6 +8,17 @@
 # version = "1.1.0"
 # type = "slicing-pipeline"
 # ///
+#
+# BMCU-Klipper Tool Assignment
+# Copyright (C) 2026 the BMCU-Klipper Tool Assignment contributors
+#
+# This program is free software: you can redistribute it and/or modify it under the terms
+# of the GNU General Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY;
+# without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details: <https://www.gnu.org/licenses/>.
 r"""
 BMCU-Klipper Tool Assignment - OrcaSlicer 2.5+ plugin for the Snapmaker U1 with BMCU-Klipper.
 The plugin version of bmcu_klipper_remap.py: the same layout search and file changes, with
@@ -105,7 +116,8 @@ PRINTER TOOLS
   Options: prefer tools already holding the print's colors; keep filament types on
   separate heads; have the printer refuse to start if a channel is labeled with another
   filament type; continue from a same-type, close-color spool when one runs out; keep
-  duplicate spools free as backups when there are enough other tools.
+  duplicate spools free as backups when there are enough other tools; turn the part
+  cooling fan off before each tool change.
   Heads with a different nozzle size than the print was sliced for are never used.
 
 PRINT TIME
@@ -119,7 +131,10 @@ FILE CHANGES
   every tool used), the "; filament:" header and the per-filament metadata are
   re-indexed to the new tools; merged colors' usage is added together. The un-retract
   Orca adds right after a change to a BMCU tool (which would push a blob out at the
-  prime tower) is removed. Each BMCU line of the print plan gets EXPECT_ENDPOINT (the
+  prime tower) is removed. Before each tool change the part cooling fan is turned off
+  (option, on by default) as soon as the old filament stops printing: the U1 hands the
+  fan's speed on to the next head, and a fan blowing on the purge turns it into strings
+  instead of a blob. Orca turns it back on after the change. Each BMCU line of the print plan gets EXPECT_ENDPOINT (the
   printer refuses to start if that channel was routed to another head since slicing)
   and EXPECT_MATERIAL (option). MATERIAL / COLOR, which relabel the channel for good,
   are only written where they describe what's in it, so merged or moved colors don't
