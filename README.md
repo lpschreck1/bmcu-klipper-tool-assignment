@@ -6,6 +6,8 @@ Each time you export or send a print, it reads the printer's current tool setup 
 
 On the U1, switching between heads is quick. Two colors on the **same** head need a full unload and load every time the print alternates between them. The plugin finds the layout with the fewest of those swaps, so you don't have to work it out for every print.
 
+Mostly AI, but it works. 
+
 ## Features
 
 - **Live printer setup.** On every export it reads which head each BMCU channel is routed to, the filament type and color in each tool, and what's loaded in each head.
