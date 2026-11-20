@@ -4,13 +4,14 @@
 # [tool.orcaslicer.plugin]
 # name = "BMCU-Klipper Tool Assignment"
 # description = "For the Snapmaker U1 with BMCU-Klipper. On every export it reads the printer's live tool setup, puts the print's colors on the tools that need the fewest filament swaps, and lets you adjust it in a window. Includes printer checks, backup spools, unload buttons, several printers, and bed leveling / flow calibration / timelapse for Orca's Print button. Adds itself to Snapmaker U1 process profiles and includes a BMCU panel beside the 3D view."
-# author = "bmcu_klipper_remap"
+# author = "Lawrence Schreck and Claude (Anthropic)"
 # version = "1.1.0"
 # type = "slicing-pipeline"
 # ///
 #
 # BMCU-Klipper Tool Assignment
-# Copyright (C) 2026 the BMCU-Klipper Tool Assignment contributors
+# Copyright (C) 2026 Lawrence Schreck
+# Written with the help of Claude (Anthropic).
 #
 # This program is free software: you can redistribute it and/or modify it under the terms
 # of the GNU General Public License as published by the Free Software Foundation, either
