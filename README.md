@@ -113,6 +113,8 @@ To stop the plugin adding itself to process profiles, set `add_to_process_profil
 
 Built for [BMCU-Klipper](https://github.com/jarczakpawel/BMCU-Klipper), which does the real work on the printer. This plugin only plans the tool layout and sends BMCU-Klipper's own commands.
 
+Written with the help of Claude (Anthropic).
+
 ## License
 
-See [LICENSE](LICENSE).
+Licensed under the GNU General Public License v3.0 (GPL-3.0), the same license as BMCU-Klipper. See [LICENSE](LICENSE).
